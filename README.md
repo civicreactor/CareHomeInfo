@@ -7,7 +7,7 @@ This is the repository for the Care home Information Project Inspired by CHI HAC
 
 
 
-Antonio Martin - Spain
+Antonio Martin - Spain, city of Madrid
 
 Carlos - Spain
 
