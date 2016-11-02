@@ -1,7 +1,7 @@
 # CareHomeInfo
 
 
-Dean Foulds.
+Dean Foulds - london
 
 This is the repository for the Care home Information Project Inspired by CHI HACK NIGHTs
 
