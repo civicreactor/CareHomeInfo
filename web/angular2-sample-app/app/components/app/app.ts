@@ -5,6 +5,8 @@ import {HomeCmp} from '../home/home';
 import {NameList} from '../../services/name_list';
 import {UsersCmp} from '../users/users';
 import {UserService} from '../users/services/user_service';
+import {NewsCmp} from '../news/news';
+
 
 import {componentProxyFactory} from '../../services/component_proxy';
 
@@ -26,6 +28,7 @@ import {componentProxyFactory} from '../../services/component_proxy';
     }),
     as: 'About'
   },
-  { path: '/users/...', component: UsersCmp, as: 'Users' }
+  { path: '/users/...', component: UsersCmp, as: 'Users' },
+  { path: '/news', component: NewsCmp, as: 'News'}
 ])
 export class AppCmp {}
