@@ -32,6 +32,10 @@ node_modules
 .idea
 .vscode
 
+# Dean sdding .DS_Store
+.DS_Store
+
+
 dist
 dev
 docs
