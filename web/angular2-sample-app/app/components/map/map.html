@@ -1,2 +1,5 @@
-<input placeholder="Your address" />
+<form (submit)="setView(postcode.value)">
+    <input #postcode placeholder="Your outer postcode" />
+    <button type="submit">Search</button>
+</form>
 <div id="mapid"></div>

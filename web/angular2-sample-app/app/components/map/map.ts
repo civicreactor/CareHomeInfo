@@ -1,4 +1,5 @@
 import {Component, AfterViewInit} from 'angular2/core';
+import {PostcodeService} from '../../services/postcode';
 
 declare let L: any;
 @Component({
@@ -6,19 +7,30 @@ declare let L: any;
   templateUrl: './components/map/map.html',
   styleUrls: ['./components/map/map.css']
 })
+
 export class MapCmp implements AfterViewInit {
+  constructor(public postcodeService: PostcodeService) {}
+  postcodes : any;
   mymap: any;
   apikey: 'pk.eyJ1IjoianVhbmNhcmxvc2hnIiwiYSI6ImNpdnIzN2R4dzAwMTEyeW1ubTI2aXJ1bG0ifQ.nY1oVZ6HN3Vg4sSwbOy2Vw';
+
   //Map loads after the view
   ngAfterViewInit() {
+
+    //Gets the coordinates for each outer postcode in the UK and saves it in this.postcodes
+    this.getPostcodes();
+
     //Load the map
     this.initMap();
+
     //Add markers
-    this.addMarker(51.5186,-0.0859,'Skillsmatter','23842a');
+    //this.addMarker(51.5186,-0.0859,'Skillsmatter','23842a');
+    this.addMarkers();
+    
   }
 
   initMap() : void {
-    this.mymap = L.map('mapid').setView([51.518, -0.086], 13);
+    this.mymap = L.map('mapid').setView([54, -2], 6);
     L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token='+this.apikey, {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/'+
     'licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -41,4 +53,21 @@ export class MapCmp implements AfterViewInit {
     marker.bindPopup(text).openPopup();
   }
 
+  addMarkers() : void {
+    //Need json!
+  }
+
+  getPostcodes() {
+    this.postcodeService.get()
+      .subscribe(
+        postcodes => this.postcodes = postcodes,
+        error => console.error('Error:', error),
+        () => console.log(console.log(this.postcodes))
+      );
+  }
+
+  setView(postcode : string) {
+    postcode = postcode.toUpperCase();
+    this.mymap.setView([this.postcodes[postcode].lat, this.postcodes[postcode].lng], 12)
+  }
 }
