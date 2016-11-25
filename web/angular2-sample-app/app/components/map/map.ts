@@ -1,5 +1,6 @@
-import {Component, AfterViewInit} from 'angular2/core';
+import {Component, OnInit, AfterViewInit} from 'angular2/core';
 import {PostcodeService} from '../../services/postcode';
+import {CarehomesService} from '../../services/carehomes';
 
 declare let L: any;
 @Component({
@@ -8,25 +9,30 @@ declare let L: any;
   styleUrls: ['./components/map/map.css']
 })
 
-export class MapCmp implements AfterViewInit {
-  constructor(public postcodeService: PostcodeService) {}
+export class MapCmp implements OnInit, AfterViewInit {
+  constructor(public postcodeService: PostcodeService, public carehomesService: CarehomesService) {}
   postcodes : any;
+  carehomes : any;
   mymap: any;
   apikey: 'pk.eyJ1IjoianVhbmNhcmxvc2hnIiwiYSI6ImNpdnIzN2R4dzAwMTEyeW1ubTI2aXJ1bG0ifQ.nY1oVZ6HN3Vg4sSwbOy2Vw';
-
+  ngOnInit() {
+    //Gets the coordinates for each outer postcode in the UK and saves it in this.postcodes
+    this.getPostcodes();
+  }
   //Map loads after the view
   ngAfterViewInit() {
 
-    //Gets the coordinates for each outer postcode in the UK and saves it in this.postcodes
-    this.getPostcodes();
+
 
     //Load the map
     this.initMap();
 
     //Add markers
     //this.addMarker(51.5186,-0.0859,'Skillsmatter','23842a');
-    this.addMarkers();
-    
+
+    //Gets carehomes json and adds the markers
+    this.getCarehomes();
+  
   }
 
   initMap() : void {
@@ -38,7 +44,7 @@ export class MapCmp implements AfterViewInit {
     }).addTo(this.mymap);
   }
 
-  addMarker(lat: number , lng : number, text : string, color : string) : void {
+  addMarker(lat: number , lng : number, text : string, color : string, markers) : void {
     var size = 'l';
     //smallOptions: {iconSize: [20, 50], popupAnchor: [0,-20]}
     //mediumOptions: {iconSize: [30,70], popupAnchor: [0,-30]}
@@ -49,12 +55,19 @@ export class MapCmp implements AfterViewInit {
                         iconSize: [36,90],
                         popupAnchor: [0, -40]
                       });
-    var marker = L.marker([lat, lng], {icon}).addTo(this.mymap);
-    marker.bindPopup(text).openPopup();
+    var marker = L.marker([lat, lng], {icon});
+    marker.bindPopup(text);
+    markers.addLayer(marker);
   }
 
-  addMarkers() : void {
-    //Need json!
+  addMarkers(carehomes) : void {
+    var markers = L.markerClusterGroup();
+    carehomes.forEach(carehome => {
+      this.addMarker(carehome.lat, carehome.lng, 'Carehome name','23842a', markers);
+    });
+    this.mymap.addLayer(markers);
+
+  //Need json!
   }
 
   getPostcodes() {
@@ -66,8 +79,19 @@ export class MapCmp implements AfterViewInit {
       );
   }
 
+  getCarehomes() {
+    this.carehomesService.get()
+      .subscribe(
+        carehomes => this.carehomes = carehomes,
+        error => console.error('Error:', error),
+        () => {
+          this.addMarkers(this.carehomes);
+        }
+      );
+  }
+
   setView(postcode : string) {
     postcode = postcode.toUpperCase();
-    this.mymap.setView([this.postcodes[postcode].lat, this.postcodes[postcode].lng], 12)
+    this.mymap.setView([this.postcodes[postcode].lat, this.postcodes[postcode].lng], 12);
   }
 }

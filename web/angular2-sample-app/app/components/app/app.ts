@@ -6,12 +6,12 @@ import {UsersCmp} from '../users/users';
 import {UserService} from '../users/services/user_service';
 import {NewsCmp} from '../news/news';
 import {PostcodeService} from '../../services/postcode';
-
+import {CarehomesService} from '../../services/carehomes';
 import {componentProxyFactory} from '../../services/component_proxy';
 
 @Component({
   selector: 'app',
-  viewProviders: [NewList, UserService, PostcodeService],
+  viewProviders: [NewList, UserService, PostcodeService, CarehomesService],
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
