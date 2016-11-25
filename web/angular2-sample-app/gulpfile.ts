@@ -26,6 +26,7 @@ gulp.task('build.dev', done =>
               'build.img.dev',
               'build.js.dev',
               'build.index',
+              'build.static',
               done));
 
 // --------------
