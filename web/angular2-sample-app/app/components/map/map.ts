@@ -61,9 +61,35 @@ export class MapCmp implements OnInit, AfterViewInit {
   }
 
   addMarkers(carehomes) : void {
-    var markers = L.markerClusterGroup();
+    var markers = L.markerClusterGroup({
+      disableClusteringAtZoom: 11,
+      spiderfyOnMaxZoom: false,
+      chunkedLoading: true
+    });
+    console.log(carehomes[0])
     carehomes.forEach(carehome => {
-      this.addMarker(carehome.lat, carehome.lng, 'Carehome name','23842a', markers);
+      if (carehome.coordinates) {
+        var color;
+        var text = `
+        <strong>${carehome.home}</strong><br /><br />
+        ${carehome.address}<br />
+        ${carehome.postcode}<br />
+        ${carehome.city}<br /><br />
+        <ul>
+          <li>Caring: ${carehome.grades.Caring}</li>
+          <li>Effective: ${carehome.grades.Effective}</li>
+          <li>Responsive: ${carehome.grades.Responsive}</li>
+          <li>Safe: ${carehome.grades.Safe}</li>
+          <li>Well-led: ${carehome.grades["Well-led"]}</li>
+          <li>Overall: ${carehome.grades.Overall}</li>
+        </ul>
+        `;
+        if (carehome.grades.Overall === 'Outstanding') color = '58e231';
+        else if (carehome.grades.Overall === 'Good') color = '33821d';
+        else if (carehome.grades.Overall === 'Requires improvement') color = 'd1e24a';
+        else if (carehome.grades.Overall === 'Inadequate') color = 'f43311';
+        this.addMarker(carehome.coordinates[0], carehome.coordinates[1], text, color, markers);
+      }
     });
     this.mymap.addLayer(markers);
 
@@ -75,7 +101,7 @@ export class MapCmp implements OnInit, AfterViewInit {
       .subscribe(
         postcodes => this.postcodes = postcodes,
         error => console.error('Error:', error),
-        () => console.log(console.log(this.postcodes))
+        //() => console.log(this.postcodes)
       );
   }
 
