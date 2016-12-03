@@ -1,3 +1,11 @@
-<img class="logo" src="static/ukcarehomes-logo.jpg">
-<br />
-<map></map>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <img class="logo" src="static/ukcarehomes-logo.jpg">
+            <map-input [mymap]="mymap"></map-input>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <map (onMap)="onMap($event)"></map>
+        </div>
+    </div>
+</div>

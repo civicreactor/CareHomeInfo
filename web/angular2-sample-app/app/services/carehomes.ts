@@ -7,7 +7,8 @@ export class CarehomesService {
   constructor(private http: Http) { }
 
   get() {
-    return this.http.get('static/CQC_Reprt_Coord.json')
+    console.log('Serving markers.json');
+    return this.http.get('static/markers.json')
       .map(response => response.json());
   }
 }
