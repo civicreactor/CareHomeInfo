@@ -2,16 +2,16 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {HomeCmp} from '../home/home';
 import {NewList} from '../../services/new_list';
-import {UsersCmp} from '../users/users';
-import {UserService} from '../users/services/user_service';
 import {NewsCmp} from '../news/news';
 import {PostcodeService} from '../../services/postcode';
 import {CarehomesService} from '../../services/carehomes';
+import {PopupService} from '../../services/popup';
+
 import {componentProxyFactory} from '../../services/component_proxy';
 
 @Component({
   selector: 'app',
-  viewProviders: [NewList, UserService, PostcodeService, CarehomesService],
+  viewProviders: [NewList, PostcodeService, CarehomesService, PopupService],
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
@@ -27,7 +27,6 @@ import {componentProxyFactory} from '../../services/component_proxy';
     }),
     as: 'About'
   },
-  { path: '/users/...', component: UsersCmp, as: 'Users' },
   { path: '/news', component: NewsCmp, as: 'News'}
 ])
 export class AppCmp {}

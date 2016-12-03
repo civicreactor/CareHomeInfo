@@ -6,8 +6,9 @@ import 'rxjs/add/operator/map';
 export class PostcodeService {
   constructor(private http: Http) { }
 
-  get() {
+  get(postcode:string) {
+    console.log('Serving coordinates for',postcode);
     return this.http.get('static/outer.json')
-      .map(response => response.json());
+      .map(response => response.json()[postcode]);
   }
 }
