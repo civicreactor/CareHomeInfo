@@ -4,4 +4,12 @@
 
 .logo {
   width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .logo {
+      width: 280px;
+    }
 }
