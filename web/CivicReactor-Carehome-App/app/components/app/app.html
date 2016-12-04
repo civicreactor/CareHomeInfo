@@ -1,10 +1,17 @@
 <section class="sample-app-content">
   <nav>
+
+    <img class="logo" style="width: 100px; float: left" src="static/crLogo.png">CIVIC REACTOR
+
     <a [routerLink]="['/Home']">Home</a>
     <a [routerLink]="['/About']">About</a>
     <a [routerLink]="['/News']">News</a>
   </nav>
 
   <router-outlet></router-outlet>
+  <footer>
+    <img class="logo" style="width: 100px" src="static/cqclogo.png">Powered by data from CQC
+  </footer>
+
 </section>
 
