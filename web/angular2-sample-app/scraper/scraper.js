@@ -5,30 +5,22 @@ var cheerio = require('cheerio');
 var app     = express();
 
 app.get('/scrape', function(req, res){
-  // Let's scrape Anchorman 2
-  url = 'http://www.imdb.com/title/tt1229340/';
+  url = 'http://www.bbc.co.uk/news/uk-38183699';
 
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html);
 
-      var title, release, rating;
-      var json = { title : "", release : "", rating : ""};
+      var title;
+      var json = { title : "" };
 
-      $('.title_wrapper').filter(function(){
+      $('.story-body__introduction').filter(function(){
         var data = $(this);
         title = data.children().first().text().trim();
-        release = data.children().last().children().last().text().trim();
+        summary = data.text().trim();
 
         json.title = title;
-        json.release = release;
-      })
-
-      $('.ratingValue').filter(function(){
-        var data = $(this);
-        rating = data.text().trim();
-
-        json.rating = rating;
+        json.summary = summary;
       })
     }
 
