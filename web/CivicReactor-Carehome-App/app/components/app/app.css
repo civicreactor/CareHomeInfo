@@ -21,6 +21,7 @@
   font-family: Consolas;
 }
 .sample-app-content nav a {
+  float: right;
   display: inline-block;
   margin-right: 15px;
 }
