@@ -6,6 +6,7 @@ import {NewsCmp} from '../news/news';
 import {PostcodeService} from '../../services/postcode';
 import {CarehomesService} from '../../services/carehomes';
 import {PopupService} from '../../services/popup';
+import {SuggestionsCmp} from '../suggestions/suggestions';
 
 import {componentProxyFactory} from '../../services/component_proxy';
 
@@ -27,6 +28,7 @@ import {componentProxyFactory} from '../../services/component_proxy';
     }),
     as: 'About'
   },
-  { path: '/news', component: NewsCmp, as: 'News'}
+  { path: '/news', component: NewsCmp, as: 'News'},
+  { path: '/suggestions', component: SuggestionsCmp, as: 'Suggestions'}
 ])
 export class AppCmp {}
