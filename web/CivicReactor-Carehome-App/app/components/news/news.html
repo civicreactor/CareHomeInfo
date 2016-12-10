@@ -1,8 +1,9 @@
-<div class="container">
+<div class="container" style="clear:both">
   <div *ngFor="#new of getNews();" class="row article" id="news-list">
     <div class="col-md-6 col-md-offset-3">
       <ul class="{{new.type}}">
         <li><img src="{{'static/news-icon-' + new.type + '.png'}}" class="img-responsive"></li>
+        <li><h2><a href="{{new.link}}">{{new.title}}</a></h2></li>
       </ul>
     </div>
   </div>
