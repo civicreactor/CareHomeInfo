@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {NewList} from '../../services/new_list';
 import {New} from '../../models/news';
 import {NgFor} from 'angular2/common';
-
+let $ = require('../../../../../node_modules/jquery/dist/jquery.min.js');
 
 @Component({
   selector: 'news',
@@ -12,7 +12,18 @@ import {NgFor} from 'angular2/common';
 })
 export class NewsCmp {
   constructor(public newList: NewList) {}
-  getNews() {
-    return this.newList.get();
+  showNews(type) {
+    if (type === 'all') {
+      $('#news-list ul').css('display', 'inherit');
+    } else {
+      type = '.' + type;
+      $('#news-list ul').css('display', 'none');
+      $(type).css('display', 'inherit');
+    }
+  }
+  getNews(type) {
+    if (type === 'all') {
+      return this.newList.news;
+    }
   }
 }
