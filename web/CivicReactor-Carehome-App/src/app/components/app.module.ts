@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './app/app.component';
 import { AboutCmp } from './about/about';
 import { HomeCmp } from './home/home';
 import { MapCmp } from './map/map';
