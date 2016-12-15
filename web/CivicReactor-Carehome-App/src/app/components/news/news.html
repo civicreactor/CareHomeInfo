@@ -1,0 +1,22 @@
+<div *ngIf="news" class="container" style="clear:both">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ul>
+        <li><button (click)="showNews('all')">All</button></li>
+        <li><button (click)="showNews('audio')"><img src="assets/news-icon-audio.png" class="img-responsive"></button></li>
+        <li><button (click)="showNews('video')"><img src="assets/news-icon-video.png" class="img-responsive"></button></li>
+        <li><button (click)="showNews('text')"><img src="assets/news-icon-text.png" class="img-responsive"></button></li>
+        <li><button (click)="showNews('blog')"><img src="assets/news-icon-blog.png" class="img-responsive"></button></li>
+      </ul>
+    </div>
+  </div>
+  <div *ngFor="let new of news" class="row article" id="news-list">
+    <div class="col-md-6 col-md-offset-3">
+      <ul class="{{new.type}}">
+        <li><img src="{{'assets/news-icon-' + new.type + '.png'}}" class="img-responsive"></li>
+        <li><h2><a href="{{new.link}}">{{new.title}}</a></h2></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
