@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app/app.component';
-import { AboutCmp } from './about/about';
-import { HomeCmp } from './home/home';
-import { MapCmp } from './map/map';
-import { MapInputCmp } from './map-input/map-input';
-import { NewsCmp } from './news/news';
-import { SuggestionsCmp } from './suggestions/suggestions';
+import { AppComponent } from './app.component';
+import { AboutCmp } from '../about/about';
+import { HomeCmp } from '../home/home';
+import { MapCmp } from '../map/map';
+import { MapInputCmp } from '../map-input/map-input';
+import { NewsCmp } from '../news/news';
+import { SuggestionsCmp } from '../suggestions/suggestions';
 
-import { PostcodeService } from '../services/postcode';
-import { NewsService } from '../services/news';
-import { PopupService } from '../services/popup';
-import { CarehomesService } from '../services/carehomes';
+import { PostcodeService } from '../../services/postcode';
+import { NewsService } from '../../services/news';
+import { PopupService } from '../../services/popup';
+import { CarehomesService } from '../../services/carehomes';
 
 
 const appRoutes: Routes = [
