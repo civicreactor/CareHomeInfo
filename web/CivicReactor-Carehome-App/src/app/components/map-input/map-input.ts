@@ -16,7 +16,6 @@ export class MapInputCmp {
 
   setView(postcode : string) {
     var coordinates;
-    postcode = postcode.toUpperCase();
     this.postcodeService.get(postcode)
       .subscribe(
         data => coordinates = data,
