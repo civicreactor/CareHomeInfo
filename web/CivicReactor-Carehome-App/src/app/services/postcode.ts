@@ -9,7 +9,7 @@ export class PostcodeService {
 
   get(postcode:string) {
     console.log('Serving coordinates for',postcode);
-    return this.http.get('assets/outer.json')
-      .map(response => response.json()[postcode]);
+    return this.http.get('https://maps.google.com/maps/api/geocode/json?address='+postcode)
+      .map(response => response.json().results[0].geometry.location);
   }
 }
