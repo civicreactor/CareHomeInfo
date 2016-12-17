@@ -1,9 +1,10 @@
 import { AboutCmp } from './about';
 
 describe('About Component:', () => {
+	beforeEach(() => {
+      this.app = new AboutCmp;
+    });
 	it('shoud be truthy', () => {
-		let app = new AboutCmp();
-		expect(app).toBeTruthy();
+		expect(this.app).toBeTruthy();
 	});
-
 });
