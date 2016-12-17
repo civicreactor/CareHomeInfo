@@ -2,9 +2,9 @@ import { AboutCmp } from './about';
 
 describe('About Component:', () => {
 	beforeEach(() => {
-      this.app = new AboutCmp;
+      this.cmp = new AboutCmp;
     });
 	it('shoud be truthy', () => {
-		expect(this.app).toBeTruthy();
+		expect(this.cmp).toBeTruthy();
 	});
 });
