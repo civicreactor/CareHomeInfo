@@ -7,7 +7,7 @@ declare let L: any;
 @Component({
   selector: 'map',
   templateUrl: './map.html',
-  styleUrls: ['./map.css'],
+  styleUrls: ['./map.scss'],
   encapsulation: ViewEncapsulation.None
 })
 

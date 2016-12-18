@@ -5,7 +5,7 @@ import {MapInputCmp} from '../map-input/map-input';
 @Component({
   selector: 'home',
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.scss']
 })
 export class HomeCmp {
   mymap;

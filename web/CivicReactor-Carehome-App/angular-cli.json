@@ -19,17 +19,17 @@
       "mobile": false,
       "styles": [
         "styles.css",
-		"../node_modules/bootstrap/dist/css/bootstrap.css",
-    "./assets/libs/leaflet/leaflet.css",
-    "./assets/libs/MarkerCluster.css",
-    "./assets/libs/MarkerCluster.Default.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "./assets/libs/leaflet/leaflet.css",
+        "./assets/libs/MarkerCluster.css",
+        "./assets/libs/MarkerCluster.Default.css"
       ],
       "scripts": [
-		"../node_modules/jquery/dist/jquery.js",
-		"../node_modules/bootstrap/dist/js/bootstrap.js",
-    "./assets/libs/leaflet/leaflet.js",
-    "./assets/libs/leaflet.markercluster.js"
-	  ],
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "./assets/libs/leaflet/leaflet.js",
+        "./assets/libs/leaflet.markercluster.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
@@ -37,8 +37,10 @@
       }
     }
   ],
-  "addons": [],
-  "packages": [],
+  "addons": [
+  ],
+  "packages": [
+  ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
@@ -50,7 +52,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,
