@@ -6,7 +6,7 @@ let $ = require('jquery/dist/jquery.min.js');
 @Component({
   selector: 'news',
   templateUrl: './news.html',
-  styleUrls: ['./news.css']
+  styleUrls: ['./news.scss']
 })
 export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}

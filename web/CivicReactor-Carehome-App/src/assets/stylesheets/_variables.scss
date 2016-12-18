@@ -1,0 +1,34 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+/*Google fonts*/
+@import url("https://fonts.googleapis.com/css?family=Exo:600,700|Open+Sans:300,400,600");
+$base-font: "Open Sans", "Helvetica", "sans-serif";
+$header-font: "Exo", "Helvetica", "sans-serif";
+
+/* Font-size and line-height*/
+$base-size: 16px;
+$base-height: 1.4;
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+/* Scheme*/
+$brand-color: #32801c;
+
+$red: #F33210;
+$blue: #76AFD3;
+$yellow: #E1C03B;
+$orange: #EE954D;
+$green: #32801C;
+$green-yellow: #D0E148;
+$green-light: #8ACF68;
+$white: #EEE;
+$black: #151919;
+
+/*Gray scale*/
+$gray-darker:  lighten(#000, 13.5%); // #222
+$gray-dark:    lighten(#000, 20%);   // #333
+$gray:         lighten(#000, 33.5%); // #555
+$gray-light:   lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #EEE

@@ -7,7 +7,7 @@ declare let L: any;
 @Component({
   selector: 'map-input',
   templateUrl: './map-input.html',
-  styleUrls: ['./map-input.css']
+  styleUrls: ['./map-input.scss']
 })
 
 export class MapInputCmp {
