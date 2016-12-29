@@ -1,18 +1,29 @@
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle btn-default navbar-btn" data-toggle="collapse" data-target="#myNavbar"> Menu
-      </button>
-      <a href="#"><img src="assets/crLogo.png"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <ul class="dropdown-menu">
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+<nav class="navbar-reactor">
+  <!-- Logo -->
+  <a href="/" class="navbar-reactor-brand">
+    <a href="#"><img src="assets/crLogo.png"></a>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-reactor-right hidden-xs hidden-sm">
+
+    <!-- Text link -->
+    <a routerLink="home" class="navbar-reactor-item navbar-reactor-link">Home</a>
+
+    <!-- Text link -->
+    <a routerLink="about" class="navbar-reactor-item navbar-reactor-link">About</a>
+
+     <!-- Text link -->
+    <a routerLink="News" class="navbar-reactor-item navbar-reactor-link">News</a>
+         <!-- Text link -->
+    <a routerLink="Suggestions" class="navbar-reactor-item navbar-reactor-link">Feedback</a>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-reactor-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <button class="dropdown-toggle" data-toggle="dropdown">Menu</button>
+      <ul class="dropdown-menu dropdown-menu-right navbar-reactor-dropdown-menu">
         <li><a routerLink="home">Home</a></li>
         <li><a routerLink="about">About</a></li>
         <li><a routerLink="news">News</a></li>
@@ -21,7 +32,6 @@
     </div>
   </div>
 </nav>
-
 
 
 <section class="sample-app-content">
