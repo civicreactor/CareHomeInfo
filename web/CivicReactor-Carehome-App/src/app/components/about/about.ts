@@ -3,15 +3,18 @@ import {NgFor} from '@angular/common';
 
 @Component({
   selector: 'about',
-  styles: [
-    `
-      ul li a {
-        color:blue;
-        cursor:pointer;
-      }
-    `
-  ],
-  templateUrl: './about.html'
+  templateUrl: './about.html',
+  styleUrls: ['./about.scss']
 })
 export class AboutCmp {
+  bdev = 'Back End Developer'
+  fdev = 'Front End Developer'
+  scrum = 'Scrum Master'
+  lead = 'Leader of the Pack'
+  d = 'Dean'
+  c = 'Carlos'
+  a = 'Anna'
+  an = 'Antonio'
+  co = 'Colin'
+  o = 'Olivia'
 }
