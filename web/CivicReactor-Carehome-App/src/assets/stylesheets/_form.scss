@@ -1,0 +1,15 @@
+#contactform {
+  padding: 50px 20px;
+  background: $gray-lighter;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px $gray-lighter;
+  margin: 50px;
+}
+.form-control {
+  width: 100%;
+  line-height: 30px;
+}
+.form-group .btn {
+  width: 70px;
+  line-height: 18px;
+}
