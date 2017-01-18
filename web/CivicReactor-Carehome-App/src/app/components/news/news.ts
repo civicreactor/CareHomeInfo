@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from '../../services/news';
 
-let $ = require('jquery/dist/jquery.min.js');
-
 @Component({
   selector: 'news',
   templateUrl: './news.html',
@@ -11,26 +9,27 @@ let $ = require('jquery/dist/jquery.min.js');
 export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}
   news;
+  allNews;
 
   ngOnInit() {
     this.getNews()
   }
 
-  showNews(type) {
-    if (type === 'all') {
-      $('#news-list ul').css('display', 'inherit');
-    } else {
-      type = '.' + type;
-      $('#news-list ul').css('display', 'none');
-      $(type).css('display', 'inherit');
-    }
-  }
   getNews() {
     this.newsService.get()
       .subscribe(
-        news => this.news = news,
-        error => console.error('Error:', error),
-        () => console.log(this.news)
+        news => this.allNews = news,
+        error => console.error('Error: ', error),
+        () => this.news = this.allNews
       );
   }
+  getFilteredNews(type) {
+    if (type === "all") this.news = this.allNews;
+    else {
+      this.news = this.allNews.filter(function (n) {
+        return n.type == type;
+      })
+    }
+  }
 }
+

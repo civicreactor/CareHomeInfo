@@ -1,25 +1,34 @@
-<div *ngIf="news" class="container" style="clear:both">
+<div class="container" style="clear:both">
   <div class="row menu">
     <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
       <ul>
-        <li><button (click)="showNews('all')">All</button></li>
-        <li><button (click)="showNews('audio')"><img src="assets/news-icon-audio.png" class="img-responsive"></button></li>
-        <li><button (click)="showNews('video')"><img src="assets/news-icon-video.png" class="img-responsive"></button></li>
-        <li><button (click)="showNews('text')"><img src="assets/news-icon-text.png" class="img-responsive"></button></li>
-        <li><button (click)="showNews('blog')"><img src="assets/news-icon-blog.png" class="img-responsive"></button></li>
+        <li><button (click)="getFilteredNews('all')">All</button></li>
+        <li><button (click)="getFilteredNews('audio')"><img src="assets/news-icon-audio.png" class="img-responsive"></button></li>
+        <li><button (click)="getFilteredNews('video')"><img src="assets/news-icon-video.png" class="img-responsive"></button></li>
+        <li><button (click)="getFilteredNews('text')"><img src="assets/news-icon-text.png" class="img-responsive"></button></li>
+        <li><button (click)="getFilteredNews('blog')"><img src="assets/news-icon-blog.png" class="img-responsive"></button></li>
       </ul>
     </div>
   </div>
-  <div *ngFor="let new of news" class="row article" id="news-list">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-      <ul class="{{new.type}}">
-        <li><img src="{{'assets/news-icon-' + new.type + '.png'}}" class="img-responsive"></li>
-        <li><h3><a href="{{new.link}}" target="_blank">{{new.title}}</a></h3></li>
-        <li><p>{{new.content}}</p></li>
-        <hr>
+  <div *ngIf="news">
+    <div *ngFor="let new of news" class="row article" id="news-list">
+      <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <ul class="{{new.type}}">
+          <li><img src="{{'assets/news-icon-' + new.type + '.png'}}" class="img-responsive"></li>
+          <li><h3><a href="{{new.link}}" target="_blank">{{new.title}}</a></h3></li>
+          <li><p>{{new.content}}</p></li>
+          <hr>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!news || news == ''">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="news-alert">
+      <ul>
+        <li><img src="assets/news-icon-alert.png" class="img-responsive" ></li>
+        <li><h5>There are not any news for this type of media at the moment, please come back later.</h5></li>
       </ul>
     </div>
   </div>
 </div>
-
 
