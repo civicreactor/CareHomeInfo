@@ -8,7 +8,8 @@ import {NewsService} from '../../services/news';
 })
 export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}
-  news = [];
+  news;
+  allNews;
 
   ngOnInit() {
     this.getNews()
@@ -17,20 +18,18 @@ export class NewsCmp implements OnInit {
   getNews() {
     this.newsService.get()
       .subscribe(
-        news => this.news = news,
+        news => this.allNews = news,
         error => console.error('Error: ', error),
-        () => console.log(this.news)
+        () => this.news = this.allNews
       );
   }
   getFilteredNews(type) {
-    this.newsService.get()
-    .subscribe(
-      news => this.news = news.filter(function (n) {
-      return n.type == type;
-    }),
-    error => console.error('Error: ', error),
-    () => console.log(this.news)
-    );
+    if (type === "all") this.news = this.allNews;
+    else {
+      this.news = this.allNews.filter(function (n) {
+        return n.type == type;
+      })
+    }
   }
 }
 
