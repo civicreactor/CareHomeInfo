@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class NewsService {
@@ -9,7 +10,7 @@ export class NewsService {
 
   get() {
     console.log('Serving news.json');
-    return this.http.get('assets/news.json')
+    return this.http.get(environment.NEWS)
       .map(response => response.json());
   }
 }
