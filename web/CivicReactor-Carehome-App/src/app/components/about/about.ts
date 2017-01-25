@@ -7,14 +7,43 @@ import {NgFor} from '@angular/common';
   styleUrls: ['./about.scss']
 })
 export class AboutCmp {
-  bdev = 'Back End Developer'
-  fdev = 'Front End Developer'
-  scrum = 'Scrum Master'
-  lead = 'Leader of the Pack'
-  d = 'Dean'
-  c = 'Carlos'
-  a = 'Anna'
-  an = 'Antonio'
-  co = 'Colin'
-  o = 'Olivia'
+  defaultPicture = "http://wearesmile.com/assets/themes/s5/img/logo.png";
+  team = [
+    {
+      name: "Olivia",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    },
+    {
+      name: "Colin",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    },
+    {
+      name: "Anna",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    },
+    {
+      name: "Antonio",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    },
+    {
+      name: "Dean",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    },
+    {
+      name: "Carlos",
+      role: "Front-end developer",
+      img: "",
+      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+    }
+  ];
 }
