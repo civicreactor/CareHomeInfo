@@ -19,7 +19,7 @@
       <h3>Meet the Team</h3>
       <div *ngFor="let member of team" class="col-xs-12 col-sm-4">
         <div class="card text-center">
-         <img src="{{member.img || defaultPicture}}" alt="" class="img-circle"/>
+         <img src="{{member.img || defaultPicture}}" alt="" class="avatar-bordered"/>
           <h4 class="card-title">{{member.name}}</h4>
           <h5 class="card-text">{{member.role}}</h5>
           <p>{{member.description}}</p>

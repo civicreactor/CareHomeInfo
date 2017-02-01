@@ -12,13 +12,13 @@ export class AboutCmp {
     {
       name: "Olivia",
       role: "Front-end developer",
-      img: "",
+      img: "assets/imgs/olivia_avatar.jpg",
       description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
     },
     {
       name: "Colin",
       role: "Front-end developer",
-      img: "",
+      img: "assets/imgs/colin_avatar.jpg",
       description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
     },
     {
@@ -42,7 +42,7 @@ export class AboutCmp {
     {
       name: "Carlos",
       role: "Front-end developer",
-      img: "",
+      img: "assets/imgs/carlos_avatar.jpg",
       description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
     }
   ];
