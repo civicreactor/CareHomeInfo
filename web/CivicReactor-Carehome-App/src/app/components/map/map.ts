@@ -110,6 +110,7 @@ export class MapCmp implements AfterViewInit {
         error => console.error('Error:', error),
         () => {
           this.addMarkers(this.carehomes);
+          this.mymap.invalidateSize();
         }
       );
   }
