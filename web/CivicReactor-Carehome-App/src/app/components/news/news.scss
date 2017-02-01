@@ -21,7 +21,7 @@ li a:link, a:hover {
 }
 
 li button i {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 li i {
@@ -30,7 +30,7 @@ li i {
 }
 
 #news-alert li i {
-    margin-top: -10px;
+    margin-top: 8px;
 }
 
 p {
@@ -45,8 +45,8 @@ ul {
 }
 
 #news-alert {
-    margin-top: 6.2vmax;
-    margin-bottom: 5.5vmax;
+    margin-top: 5.2vmax;
+    margin-bottom: 3.6vmax;
 }
 
 #news-alert img {
@@ -67,4 +67,18 @@ ul {
 .menu ul {
     text-align: center;
     margin-bottom: 40px;
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+    #news-alert {
+        margin-top: 5.4vmax;
+        margin-bottom: 8.6vmax;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    #news-alert {
+        margin-top: 10vmax;
+        margin-bottom: 45.2vmax;
+    }
 }
