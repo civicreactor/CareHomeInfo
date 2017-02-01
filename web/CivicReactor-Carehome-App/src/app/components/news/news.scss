@@ -20,13 +20,17 @@ li a:link, a:hover {
     text-decoration: none;
 }
 
-li button img {
-    margin: 0 15px;
+li button i {
+    margin: 0 20px;
 }
 
-li img {
+li i {
     float: left;
     margin-right: 30px;
+}
+
+#news-alert li i {
+    margin-top: -10px;
 }
 
 p {
@@ -42,13 +46,17 @@ ul {
 
 #news-alert {
     margin-top: 6.2vmax;
-    margin-bottom: 7vmax;
+    margin-bottom: 5.5vmax;
 }
 
 #news-alert img {
     width: 6em;
     margin-top: -20px;
     margin-right: 35px;
+}
+
+.fill {
+    margin-bottom: 8.2vmax;
 }
 
 .menu li:first-child button {

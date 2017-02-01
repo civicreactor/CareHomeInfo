@@ -3,10 +3,10 @@
     <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
       <ul>
         <li><button (click)="getFilteredNews('all')">All</button></li>
-        <li><button (click)="getFilteredNews('audio')"><img src="assets/news-icon-audio.png" class="img-responsive"></button></li>
-        <li><button (click)="getFilteredNews('video')"><img src="assets/news-icon-video.png" class="img-responsive"></button></li>
-        <li><button (click)="getFilteredNews('text')"><img src="assets/news-icon-text.png" class="img-responsive"></button></li>
-        <li><button (click)="getFilteredNews('blog')"><img src="assets/news-icon-blog.png" class="img-responsive"></button></li>
+        <li><button (click)="getFilteredNews('audio')"><i class="fa fa-file-audio-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button (click)="getFilteredNews('video')"><i class="fa fa-file-video-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button (click)="getFilteredNews('text')"><i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button (click)="getFilteredNews('blog')"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></button></li>
       </ul>
     </div>
   </div>
@@ -14,19 +14,21 @@
     <div *ngFor="let new of news" class="row article" id="news-list">
       <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
         <ul class="{{new.type}}">
-          <li><img src="{{'assets/news-icon-' + new.type + '.png'}}" class="img-responsive"></li>
+          <li *ngIf="new.type !== 'blog'"><i class="{{'fa fa-file-' + new.type + '-o fa-2x'}}" aria-hidden="true"></i></li>
+          <li *ngIf="new.type === 'blog'"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></li>
           <li><h3><a href="{{new.link}}" target="_blank">{{new.title}}</a></h3></li>
           <li><p>{{new.content}}</p></li>
           <hr>
         </ul>
+        <div *ngIf="news.length === 1" class="fill">
       </div>
     </div>
   </div>
   <div *ngIf="!news || news == ''">
     <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="news-alert">
       <ul>
-        <li><img src="assets/news-icon-alert.png" class="img-responsive" ></li>
-        <li><h5>There are not any news for this type of media at the moment, please come back later.</h5></li>
+        <li><i class="fa fa-info-circle fa-4x" aria-hidden="true"></i></li>
+        <li><h4><p>There are not any news for this type of media at the moment, please come back later.</p></h4></li>
       </ul>
     </div>
   </div>
