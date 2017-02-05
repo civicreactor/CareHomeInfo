@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NewsService} from '../../services/news';
 
 @Component({
@@ -6,13 +6,21 @@ import {NewsService} from '../../services/news';
   templateUrl: './news.html',
   styleUrls: ['./news.scss']
 })
+
 export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}
   news;
   allNews;
+  
+  @ViewChild('all') all;
+  @ViewChild('audio') audio;
+  @ViewChild('video') video;
+  @ViewChild('text') text;
+  @ViewChild('blog') blog;
 
   ngOnInit() {
-    this.getNews()
+    this.getNews();
+    this.all.nativeElement.classList.add("highLighted");    
   }
 
   getNews() {
@@ -31,5 +39,14 @@ export class NewsCmp implements OnInit {
       })
     }
   }
+  active(type) {
+    this.all.nativeElement.classList.remove("highLighted");
+    this.audio.nativeElement.classList.remove("highLighted");
+    this.video.nativeElement.classList.remove("highLighted");
+    this.text.nativeElement.classList.remove("highLighted");
+    this.blog.nativeElement.classList.remove("highLighted");
+    eval("this." + type + ".nativeElement.classList.add('highLighted')");
+  }
+    
 }
 

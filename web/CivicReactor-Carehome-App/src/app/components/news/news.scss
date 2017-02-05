@@ -1,3 +1,8 @@
+
+a:link, a:hover li {
+    text-decoration: none;
+}
+
 button {
     background: none;
     border: none;
@@ -5,6 +10,15 @@ button {
     padding: 0;
     font: inherit;
     cursor: pointer;
+    margin: 0 15px;
+}
+
+button:hover, button:active {
+    color: #337ab7 !important;
+}
+
+button:focus {
+    outline: none;
 }
 
 hr {
@@ -14,23 +28,6 @@ hr {
 
 li {
     display: inline;
-}
-
-li a:link, a:hover {
-    text-decoration: none;
-}
-
-li button i {
-    margin: 0 15px;
-}
-
-li i {
-    float: left;
-    margin-right: 30px;
-}
-
-#news-alert li i {
-    margin-top: 8px;
 }
 
 p {
@@ -49,19 +46,26 @@ ul {
     margin-bottom: 3.6vmax;
 }
 
-#news-alert img {
-    width: 6em;
-    margin-top: -20px;
-    margin-right: 35px;
+#news-alert li i {
+    margin-top: 8px;
+}
+
+#news-list li i, #news-alert li i {
+    float: left;
+    margin-right: 30px;
 }
 
 .fill {
     margin-bottom: 8.2vmax;
 }
 
+.highLighted {
+    color: #337ab7 !important;
+}
+
 .menu li:first-child button {
-    font-size: 2em;
-    padding: 0 10px;
+    font-size: 2.4em;
+    vertical-align: -4px;
 }
 
 .menu ul {

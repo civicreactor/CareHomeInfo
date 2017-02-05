@@ -2,11 +2,11 @@
   <div class="row menu">
     <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
       <ul>
-        <li><button (click)="getFilteredNews('all')">All</button></li>
-        <li><button (click)="getFilteredNews('audio')"><i class="fa fa-file-audio-o fa-2x" aria-hidden="true"></i></button></li>
-        <li><button (click)="getFilteredNews('video')"><i class="fa fa-file-video-o fa-2x" aria-hidden="true"></i></button></li>
-        <li><button (click)="getFilteredNews('text')"><i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i></button></li>
-        <li><button (click)="getFilteredNews('blog')"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></button></li>
+        <li><button #all (click)="getFilteredNews('all'); active('all')">All</button></li>
+        <li><button #audio (click)="getFilteredNews('audio'); active('audio')"><i class="fa fa-file-audio-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button #video (click)="getFilteredNews('video'); active('video')"><i class="fa fa-file-video-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button #text (click)="getFilteredNews('text'); active('text')"><i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i></button></li>
+        <li><button #blog (click)="getFilteredNews('blog'); active('blog')"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></button></li>
       </ul>
     </div>
   </div>
