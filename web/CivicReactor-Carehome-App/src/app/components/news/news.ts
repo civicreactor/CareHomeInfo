@@ -6,15 +6,16 @@ import {NewsService} from '../../services/news';
   templateUrl: './news.html',
   styleUrls: ['./news.scss']
 })
+
 export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}
   news;
   allNews;
+  activeButton = 'all';
 
   ngOnInit() {
-    this.getNews()
+    this.getNews();  
   }
-
   getNews() {
     this.newsService.get()
       .subscribe(
@@ -31,5 +32,12 @@ export class NewsCmp implements OnInit {
       })
     }
   }
+  clicked(type) {
+    this.getFilteredNews(type);
+    this.activeButton = type;
+  }
+  isActive(type) {
+    return this.activeButton === type;
+  }   
 }
 

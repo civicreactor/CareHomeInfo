@@ -20,6 +20,7 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
         "./assets/libs/leaflet/leaflet.css",
         "./assets/libs/MarkerCluster.css",
         "./assets/libs/MarkerCluster.Default.css"
