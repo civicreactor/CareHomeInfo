@@ -11,18 +11,11 @@ export class NewsCmp implements OnInit {
   constructor(public newsService: NewsService) {}
   news;
   allNews;
-  
-  @ViewChild('all') all;
-  @ViewChild('audio') audio;
-  @ViewChild('video') video;
-  @ViewChild('text') text;
-  @ViewChild('blog') blog;
+  activeButton = 'all';
 
   ngOnInit() {
-    this.getNews();
-    this.all.nativeElement.classList.add("highLighted");    
+    this.getNews();  
   }
-
   getNews() {
     this.newsService.get()
       .subscribe(
@@ -39,14 +32,12 @@ export class NewsCmp implements OnInit {
       })
     }
   }
-  active(type) {
-    this.all.nativeElement.classList.remove("highLighted");
-    this.audio.nativeElement.classList.remove("highLighted");
-    this.video.nativeElement.classList.remove("highLighted");
-    this.text.nativeElement.classList.remove("highLighted");
-    this.blog.nativeElement.classList.remove("highLighted");
-    eval("this." + type + ".nativeElement.classList.add('highLighted')");
+  clicked(type) {
+    this.getFilteredNews(type);
+    this.activeButton = type;
   }
-    
+  isActive(type) {
+    return this.activeButton === type;
+  }   
 }
 

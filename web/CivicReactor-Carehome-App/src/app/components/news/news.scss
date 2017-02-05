@@ -21,6 +21,10 @@ button:focus {
     outline: none;
 }
 
+button.active {
+    color: #337ab7 !important;
+}
+
 hr {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -57,10 +61,6 @@ ul {
 
 .fill {
     margin-bottom: 8.2vmax;
-}
-
-.highLighted {
-    color: #337ab7 !important;
 }
 
 .menu li:first-child button {
