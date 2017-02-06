@@ -41,9 +41,9 @@ export class AboutCmp {
     },
     {
       name: "Carlos",
-      role: "Front-end developer",
+      role: "Full-stack developer",
       img: "assets/imgs/carlos_avatar.jpg",
-      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+      description: "JavaScript and Java developer during the day. Enjoy learning new things: Angular2, task runners, functional programming, algorithms and... days are short!"
     }
   ];
 }
