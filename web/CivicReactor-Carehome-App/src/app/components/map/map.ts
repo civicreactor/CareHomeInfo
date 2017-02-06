@@ -150,12 +150,12 @@ export class MapCmp implements AfterViewInit {
         ${carehome.postcode}<br />
         ${carehome.city}<br /><br />
         <ul style="list-style: none;">
-          <li style="background: url(assets/imgs/${carehome.grading.Caring.replace(' ','')}.png) no-repeat right center transparent;">Caring: ${carehome.grading.Caring}</li>
-          <li style="background: url(assets/imgs/${carehome.grading.Effective.replace(' ','')}.png) no-repeat right center transparent;">Effective: ${carehome.grading.Effective}</li>
-          <li style="background: url(assets/imgs/${carehome.grading.Responsive.replace(' ','')}.png) no-repeat right center transparent;">Responsive: ${carehome.grading.Responsive}</li>
-          <li style="background: url(assets/imgs/${carehome.grading.Safe.replace(' ','')}.png) no-repeat right center transparent;">Safe: ${carehome.grading.Safe}</li>
-          <li style="background: url(assets/imgs/${carehome.grading['Well-led'].replace(' ','')}.png) no-repeat right center transparent;">Well-led: ${carehome.grading['Well-led']}</li>
-          <li style="background: url(assets/imgs/${carehome.grading.Overall.replace(' ','')}.png) no-repeat right center transparent;">Overall: ${carehome.grading.Overall}</li>
+          <li style="background: url(assets/imgs/${carehome.grading.Caring.replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Caring: ${carehome.grading.Caring}</li>
+          <li style="background: url(assets/imgs/${carehome.grading.Effective.replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Effective: ${carehome.grading.Effective}</li>
+          <li style="background: url(assets/imgs/${carehome.grading.Responsive.replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Responsive: ${carehome.grading.Responsive}</li>
+          <li style="background: url(assets/imgs/${carehome.grading.Safe.replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Safe: ${carehome.grading.Safe}</li>
+          <li style="background: url(assets/imgs/${carehome.grading['Well-led'].replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Well-led: ${carehome.grading['Well-led']}</li>
+          <li style="background: url(assets/imgs/${carehome.grading.Overall.replace(' ','').toLowerCase()}.png) no-repeat right center transparent;">Overall: ${carehome.grading.Overall}</li>
         </ul>
         <h4><a href="${carehome.url}" target="_blank">More details here</a></h4>
       </div>
