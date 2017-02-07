@@ -8,15 +8,16 @@
   <div class="navbar-reactor-right hidden-xs hidden-sm">
 
     <!-- Text link -->
-    <a routerLink="home" class="navbar-reactor-item navbar-reactor-link">Home</a>
+    <a routerLink = "./" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"  class="navbar-reactor-item navbar-reactor-link">Home</a>
 
     <!-- Text link -->
-    <a routerLink="about" class="navbar-reactor-item navbar-reactor-link">About</a>
+    <a routerLink = "/about" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">About</a>
 
      <!-- Text link -->
-    <a routerLink="news" class="navbar-reactor-item navbar-reactor-link">News</a>
+    <a routerLink = "/news" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">News</a>
          <!-- Text link -->
-    <a routerLink="suggestions" class="navbar-reactor-item navbar-reactor-link">Feedback</a>
+    <a routerLink = "/suggestions" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">Feedback</a>
+  
   </div>
 
   <!-- Dropdown appearing on mobile only -->
@@ -25,10 +26,10 @@
       <div class="dropdown-toggle btn-success btn-sm" data-toggle="dropdown">Menu
       </div>
       <ul class="dropdown-menu dropdown-menu-right navbar-reactor-dropdown-menu">
-        <li><a routerLink="home">Home</a></li>
-        <li><a routerLink="about">About</a></li>
-        <li><a routerLink="news">News</a></li>
-        <li><a routerLink="suggestions">Feedback</a></li>
+        <li routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="./">Home</a></li>
+        <li routerLinkActive = "active"><a routerLink="about">About</a></li>
+        <li routerLinkActive = "active"><a routerLink="news">News</a></li>
+        <li routerLinkActive = "active"><a routerLink="suggestions">Feedback</a></li>
       </ul>
     </div>
   </div>

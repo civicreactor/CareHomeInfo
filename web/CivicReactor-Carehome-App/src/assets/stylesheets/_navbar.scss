@@ -58,7 +58,7 @@
   font-size: 18px;
   text-decoration: none;
 }
-.navbar-reactor-link:hover {
+.navbar-reactor-link:hover, a.active {
   color: $orange;
   text-decoration: none;
 }
@@ -91,12 +91,12 @@
 .navbar-reactor-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: 400px !important;
-  color: $black !important;
+  color: $black;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-reactor-dropdown-menu li > a:hover {
+.navbar-reactor-dropdown-menu li > a:hover, .dropdown-menu > .active > a {
   background: transparent !important;
   color: $blue !important;
 }
