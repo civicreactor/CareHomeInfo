@@ -35,6 +35,7 @@
 }
 
 .logo {
+  float: right;
   width: 100px;
   margin-bottom: 30px;
 }
@@ -42,6 +43,13 @@
 .logo:hover {
   transform: scale(1.1);
 }
+
+.logo1 {
+  float: right;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
 .footer-above {
   color: white;
 }
