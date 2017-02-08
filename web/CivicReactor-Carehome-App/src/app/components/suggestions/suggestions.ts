@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { EmailService } from '../../services/email';
 
 
 @Component({
@@ -7,10 +8,28 @@ import {Component} from '@angular/core';
   styleUrls: ['./suggestions.scss']
 })
 
-export class SuggestionsCmp {}
+export class SuggestionsCmp {
+  constructor(public emailService: EmailService) { }
+  feedbackForm = {};
+  successMessage = "";
+  errorMessage = "";
+  sendingEmail = false;
 
-// Where does this go? I use this method so that bots cannot read email address directly from html file to spam us. Usually this would got in a js.html file but not sure about using typescript.
-// <script>
-//   var contactform =  document.getElementById('contactform');
-//   contactform.setAttribute('action', '//formspree.io/' + 'insert' + '@' + 'email' + '.' + 'here');
-// </script>
+  sendEmail() {
+    this.successMessage = "";
+    this.errorMessage = "";
+    this.sendingEmail = true;
+    this.emailService.send(this.feedbackForm)
+      .subscribe(
+      data => console.log('response:', data),
+      error => {
+        this.errorMessage = "Error sending the email";
+        this.sendingEmail = false;
+      },
+      () => {
+        this.successMessage = "Email sent!"
+        this.sendingEmail = false;
+      }
+      );
+  }
+}

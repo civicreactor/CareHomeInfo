@@ -1,44 +1,44 @@
 <section id="contact">
   <div class="container">
     <div class="row">
-        <div class="col-lg-12 text-center">
-            <h2>Give us your feedback</h2>
-        </div>
+      <div class="col-lg-12 text-center">
+        <h2>Give us your feedback</h2>
+      </div>
     </div>
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <form id="contactform" method="POST">
+        <form (ngSubmit)="sendEmail()" #feedbackForm="ngForm">
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Full name</label>
-              <input type="text" class="form-control" name="name" placeholder="Your full name" id="name" required data-validation-required-message="Please enter your name.">
+              <input [(ngModel)]="feedbackForm.name" type="text" class="form-control" name="name" placeholder="Your full name" id="name"
+                required data-validation-required-message="Please enter your name.">
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Email address</label>
-              <input type="email" class="form-control" name="_replyto" placeholder="Your email" id="email" required data-validation-required-message="Please enter your email address.">
-              <input type="hidden" name="_subject" value="Website contact" />
-            </div>
-          </div>
-          <div class="row control-group">
-            <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Subject matter</label>
-              <input type="subject" class="form-control" name="subject" placeholder="Your subject matter" id="subject" required data-validation-required-message="Please enter your subject matter.">
+              <input [(ngModel)]="feedbackForm.email" type="email" class="form-control" name="_replyto" placeholder="Your email" id="email"
+                required data-validation-required-message="Please enter your email address.">
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Message</label>
-              <textarea name="message" class="form-control" placeholder="Your message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+              <textarea [(ngModel)]="feedbackForm.content" name="message" class="form-control" placeholder="Your message" id="message"
+                required data-validation-required-message="Please enter a message."></textarea>
             </div>
           </div>
           <br>
-          <div id="success"></div>
-            <div class="row">
-              <div class="form-group col-xs-12">
+          <div class="row">
+            <div class="form-group col-xs-12">
               <button type="submit" class="btn btn-primary btn-lg">Send</button>
             </div>
+          </div>
+          <div class="notifications">
+            <div *ngIf="successMessage" class="alert alert-success">{{successMessage}}</div>
+            <div *ngIf="successError" class="alert alert-warning">{{errorMessage}}</div>
+            <div class="loader" *ngIf="sendingEmail"></div>
           </div>
         </form>
       </div>

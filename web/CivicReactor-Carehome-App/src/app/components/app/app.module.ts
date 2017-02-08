@@ -16,6 +16,7 @@ import { PostcodeService } from '../../services/postcode';
 import { NewsService } from '../../services/news';
 import { PopupService } from '../../services/popup';
 import { CarehomesService } from '../../services/carehomes';
+import { EmailService } from '../../services/email';
 
 
 const appRoutes: Routes = [
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     PostcodeService,
     CarehomesService,
     NewsService,
-    PopupService
+    PopupService,
+    EmailService
   ],
   bootstrap: [AppComponent]
 })
