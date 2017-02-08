@@ -31,7 +31,7 @@ export class AboutCmp {
       name: "Antonio",
       role: "Front-end developer",
       img: "",
-      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+      description: "Tech team, build and Junior developer."
     },
     {
       name: "Dean",

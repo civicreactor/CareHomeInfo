@@ -12,9 +12,8 @@
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $green;
   transition: all 0.3s ease;
-  display: flex;
+  display: block;
   height: 70px;
-  padding: 0px 30px;
   margin: 0px 0px 50px;
   align-items: center;
   justify-content: space-between;
@@ -39,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 22px;
 }
 
 /* Navbar item */
@@ -116,6 +116,8 @@
   color: $black;
   background-color: $green-light;
   border-color: #255625;
+  float: right;
+  margin-top: 21px;
 }
 
 .dropdown-toggle.btn-success:hover {
