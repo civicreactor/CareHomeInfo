@@ -1,38 +1,46 @@
 <nav class="navbar-reactor">
-  <!-- Logo -->
-  <a routerLink="home" class="navbar-reactor-brand">
-    <img src="assets/imgs/crlogo.png">
-  </a>
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-md-6">  
+            <!-- Logo -->
+            <a routerLink="home" class="navbar-reactor-brand">
+                <img src="assets/imgs/crlogo.png">
+            </a>
+        </div>
+        <div class="col-md-6">
+            <!-- Right Navigation -->
+            <div class="navbar-reactor-right hidden-xs hidden-sm">
 
-  <!-- Right Navigation -->
-  <div class="navbar-reactor-right hidden-xs hidden-sm">
+                <!-- Text link -->
+                <a routerLink = "./" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"  class="navbar-reactor-item navbar-reactor-link">Home</a>
 
-    <!-- Text link -->
-    <a routerLink = "./" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"  class="navbar-reactor-item navbar-reactor-link">Home</a>
+                <!-- Text link -->
+                <a routerLink = "/about" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">About</a>
 
-    <!-- Text link -->
-    <a routerLink = "/about" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">About</a>
-
-     <!-- Text link -->
-    <a routerLink = "/news" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">News</a>
-         <!-- Text link -->
-    <a routerLink = "/suggestions" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">Feedback</a>
-  
-  </div>
-
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-reactor-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <div class="dropdown-toggle btn-success btn-sm" data-toggle="dropdown">Menu
-      </div>
-      <ul class="dropdown-menu dropdown-menu-right navbar-reactor-dropdown-menu">
-        <li routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="./">Home</a></li>
-        <li routerLinkActive = "active"><a routerLink="about">About</a></li>
-        <li routerLinkActive = "active"><a routerLink="news">News</a></li>
-        <li routerLinkActive = "active"><a routerLink="suggestions">Feedback</a></li>
-      </ul>
+                <!-- Text link -->
+                <a routerLink = "/news" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">News</a>
+                    <!-- Text link -->
+                <a routerLink = "/suggestions" routerLinkActive = "active" class="navbar-reactor-item navbar-reactor-link">Feedback</a>
+            </div>
+        </div>
+    
+        <div class="col-xs-6">  
+            <!-- Dropdown appearing on mobile only -->
+            <div class="navbar-reactor-item hidden-md hidden-lg">
+                <div class="dropdown">
+                <div class="dropdown-toggle btn-success btn-sm" data-toggle="dropdown">Menu
+                </div>
+                <ul class="dropdown-menu dropdown-menu-right navbar-reactor-dropdown-menu">
+                    <li routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="./">Home</a></li>
+                    <li routerLinkActive = "active"><a routerLink="about">About</a></li>
+                    <li routerLinkActive = "active"><a routerLink="news">News</a></li>
+                    <li routerLinkActive = "active"><a routerLink="suggestions">Feedback</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+  </div> 
 </nav>
 
 
