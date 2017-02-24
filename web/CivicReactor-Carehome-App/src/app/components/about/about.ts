@@ -35,9 +35,9 @@ export class AboutCmp {
     },
     {
       name: "Dean",
-      role: "Front-end developer",
+      role: "Full Stack Ruby Developer",
       img: "",
-      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+      description: "Hobby technologist and Ruby on Rails developer.  Keen to learn new languages and work on big projects in collaboration with others."
     },
     {
       name: "Carlos",
