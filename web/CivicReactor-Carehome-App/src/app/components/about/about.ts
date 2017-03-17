@@ -11,9 +11,9 @@ export class AboutCmp {
   team = [
     {
       name: "Olivia",
-      role: "Front-end developer",
+      role: "Front End Developer & Designer",
       img: "assets/imgs/olivia_avatar.jpg",
-      description: "sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds sad sada sds "
+      description: "Techincal Support Engineer by day and Full Stack Ruby Developer by night with a flare for Design on the side."
     },
     {
       name: "Colin",
